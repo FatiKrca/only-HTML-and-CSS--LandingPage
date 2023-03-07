@@ -1,0 +1,199 @@
+*{
+    margin: 0;
+    padding: 0;
+    /*Box-sizing değeri olarak border-box değeri atarsak ; 
+    bir etikette, padding ve border genişlik ve yüksekliğe dahil edilir.*/
+    box-sizing: border-box;
+}
+a{
+    /*text-decoration: none linklerin altının çizili olmasını aldırır*/
+    text-decoration: none;
+    color: white;
+}
+html{
+    font-family: "Open Sans", sans-serif ;
+}
+/* Navbar section*/
+#navbar{
+    color: white;
+    display: flex;
+    justify-content: space-between; /* h1 ile ul nin iki ayrı tarafa yapışması*/
+
+    /* align-items: center; navbarın içindeki bütün itemlerin merkeze gelmesine yarar*/
+    align-items: center;
+    padding: 0 0.75rem;
+    height: 70px;
+}
+#navbar ul{
+    /* ul nin listelemeinin başındaki işaretleri kaldırır*/
+    list-style-type: none;
+    
+    /*displat:flex normalde html de liste itemleri alt alta dizilir
+     bunu yazınca esneklik kazanır ve yan yana gelebilir 
+     kısca felx olunca yerlerinde değişiklik yapabiliriz*/
+    display: flex;
+    align-items: center;
+}
+#navbar ul li a{
+    padding: 0.75rem;
+}
+#navbar ul li a:hover{
+    background: #336ea2;
+    border-radius: 4px;
+}
+/* Home section*/
+
+#home{
+
+    /* alt elemanların yerlerinde değişiklik yapabilmekiçin flex yapıyoruz*/
+    display: flex;
+
+    /* flex-direction nasıl sıralanacağını seçmeyeri otomatik row olarak gelir
+    row olunca yan yana dizilir burada alt alta gelmesini istiyoru(her bir div, paragraf başlık vb)*/
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border-bottom: 1px solid grey;
+}
+#home img{
+    /*içinde bulunduğu kutu veya fotoğrafın kendi boyutu olan 300*300 ün hepsini olduğu alanı doldurması anlamın gelir*/
+    max-width: 100%;
+    height: auto;
+    /*yuvarlak yapmak için kullanılan radius*/
+    border-radius: 100%;
+}
+#home .name h2{
+    margin-bottom: 0.75rem;
+}
+#home .name p{
+    /* biraz saydamlaştırır*/
+    opacity: 0.6;
+    font-style: italic;
+}
+
+/* Training*/
+
+#training{
+    color: #fff;
+    padding: 1rem;
+}
+#training .items{
+    /*hareketlere esneklik getirir bu olmasa kutular sıkışır ve yan yana gelirdi
+    */
+    display: flex;
+    /* yanlara yaslanık olmasına yarar*/
+    justify-content: space-between;
+    align-items: center;
+}
+#training .items .item{
+    /* her bir itemin mevcut alanın %33 ünü kaplamasına yarar
+    3 item olduğundan satırı 3 e böler*/
+    width: 33%;
+
+    /*yazının olduğu kutu(trainingin altındaki itemsin altındaki item)*/
+    text-align: center;
+    padding: 0.5rem;
+}
+/*hover olayı. ona tıklayınca olacak olan olaylar.
+yani aşağıdaki iteme tıklayınca rengi kırmızı olur*/
+#training .items .item:hover{
+    color: red;
+    opacity: 0.6;
+}
+/* Courses*/
+
+#courses{
+    color: #333;
+    padding: 1rem;
+}
+.courses{
+    /* Esneklik sağlıyor*/
+    display: flex;
+    /* sütun olarak sıralanması anlamına gelir*/
+    flex-direction: column;
+    padding: 1rem;
+}
+.courses .course{
+    display: flex;
+    padding: 0.5rem;
+    /*alttan boşluk*/
+    margin-bottom: 0.5rem;
+}
+.courses .course .course-image{
+    /*sağdan boşluk yazıların ayrışması demek*/
+    margin-right: 0.5rem;
+    /*herhangi bir elementi olduğu yerden konumlandırmaya yarar
+    ayrıca altta verilen     position: absolute; in çalışa bilmesi için 
+    bu kutunun relative olması lazım*/
+    position: relative;
+} 
+.courses .course .course-image img{
+    border-radius: 5px;
+}
+.courses .course .course-image span{
+    background: red;
+    padding: 0.25rem;
+    color: white;
+    border-radius: 4px;
+    /* kapsayıcı kutuya göre konumlandırma
+    bir sonraki satırda olan top:15 ve left:0 ın
+    orada konulanması için gerekli*/
+    position: absolute;
+    top: 15;
+    left: 0;
+}
+.courses .course .course-info .title{
+    /*harfler arası boşluk*/
+    letter-spacing: 1.2px;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+.courses .course .course-info .description{
+    letter-spacing: 1.2px;
+    margin-bottom: 0.25rem;
+    opacity: 0.6;
+}
+.courses .course .course-info .instructor{
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+    opacity: 0.6;
+}
+.courses .course .course-info .rating{
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+    opacity: 0.6;
+}
+/*Contact*/
+#contact{
+    color: white;
+    padding: 1rem;
+}
+#contact .contact-form{
+    max-width: 700px ;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+#contact .contact-form ul{
+    list-style-type: none;
+    display: flex;
+    margin-top: 1rem;
+
+    /* 
+    normalde  align-items: center diyerek ortalardık 
+    bunun içinde olduğu #contact .contact-form display:flex dir.
+    o sebeple flexin içinde olan itemleri ortalamak için align-self: center deriz.
+   */
+    align-self: center;
+}
+#contact .contact-form ul li a{
+    padding: 1rem;
+    font-size: 2rem;
+}
+#contact .contact-form ul li a:hover{
+    opacity: 0.7;
+    
+}

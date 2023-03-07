@@ -1,0 +1,23 @@
+#navbar{
+    /* mobile versiyona geçince sıralanma sütuna göre olur
+    üst sınıftan    display: flex; geliyor böylelikle değişiklik yapılabiliyor*/
+    flex-direction: column;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    /*kutu sınırları dışına çıkan alanları gizler*/
+    overflow: hidden;
+    height: 90px;
+}
+#training .items{
+    /* mobile versiyona geçince sıralanma sütuna göre olur
+    üst sınıftan    display: flex; geliyor böylelikle değişiklik yapılabiliyor*/
+    flex-direction: column;
+}
+#training .items .item{
+    width: 100%;
+}
+#courses .course{
+    /* mobile versiyona geçince sıralanma sütuna göre olur
+    üst sınıftan    display: flex; geliyor böylelikle değişiklik yapılabiliyor*/
+    flex-direction: column;
+}
